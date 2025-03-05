@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="faq.css"> <!-- 外部CSSを適用 -->
+    <script defer src="faq.js"></script> <!-- 外部JSを適用 -->
+    <title>お問い合わせ</title>
+</head>
+<body>
+
+<!-- ハンバーガーメニュー -->
+<nav>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul id="menu" class="hidden">
+        <li><a href="main.html">TOP</a></li>
+        <li><a href="tour.html">Tourist</a></li>
+        <li><a href="gohan.html">Food Map</a></li>
+        <li><a href="menu.html">Secret</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h1>お問い合わせ</h1>
+    <p>ご質問がありましたらお気軽にご連絡ください。</p>
+
+    <!-- お問い合わせフォーム -->
+    <form id="contactForm"  method="POST">
+        <fieldset>
+            <label>
+                <p>お名前</p>
+                <input type="text" name="text" size="30" maxlength="28" placeholder="例: 黒沢玲央" required>
+            </label>
+            <label>
+                <p>ご意見・ご質問</p>
+                <textarea name="note" cols="32" rows="7" required></textarea> 
+            </label>
+        </fieldset>
+        <button type="submit">送信</button>
+    </form>
+    
+    <!-- 送信完了メッセージ（初期状態では非表示） -->
+    <div id="responseMessage" style="display: none; color: green; margin-top: 20px;">
+        <b>送信が完了しました！ありがとうございます。</b>
+    </div>
+</section>
+
+</body>
+</html>

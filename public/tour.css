@@ -1,0 +1,206 @@
+/* スマホ用の調整 */
+@media screen and (max-width: 430px) {  /* 画面幅が430px以下のとき適用 */
+    .container {
+        display: flex;                /* flexbox を使ってレイアウトを調整 */
+        flex-direction: column;       /* 子要素を縦に並べる */
+        align-items: center;          /* 中央揃え */
+    }
+
+    ul {
+        padding: 0;                   /* デフォルトの余白を削除 */
+        list-style: none;              /* リストのマーカーを非表示 */
+        display: flex;                 /* 横並びにする */
+        flex-wrap: wrap;               /* 画面幅に応じて折り返す */
+        justify-content: center;       /* 中央揃え */
+        gap: 0px;                     /* アイテム間の間隔 */
+    }
+
+    ul li {
+        font-size: 16px;               /* フォントサイズを小さめに */
+    }
+
+    ul li a {
+        display: block;                /* リンクをブロック要素に */
+        background-color: #f8f8f8;     /* 背景色を薄いグレーに */
+        border-radius: 5px;            /* 角を丸く */
+        text-decoration: none;         /* 下線を消す */
+        color: #333;                   /* 文字色 */
+    }
+}
+
+/* 全体のスタイル */
+body {
+    font-family: 'Roboto', sans-serif; /* フォントをRobotoに設定 */
+    background-color: #f0f0f0;         /* 背景色を薄いグレーに */
+    color: #333;                       /* 文字色 */
+    text-align: center;                 /* すべてのテキストを中央揃え */
+    padding: 0;
+}
+
+/* タイトル */
+.title {
+    font-size: 36px;         /* 文字サイズ */
+    font-weight: bold;       /* 文字を太く */
+    color: #333;             /* 文字色 */
+    margin-bottom: 20px;     /* 下に余白を作る */
+}
+
+/* リスト全体 */
+.container ul {
+    list-style: none;                                 /* リストのマーカーを非表示 */                                   
+    margin: 0 auto;                                  /* 中央揃え */
+    display: grid;                                   /* グリッドレイアウトを適用 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 自動でカラム調整 */
+    gap: 2px;                                       /* アイテム間の隙間 */
+    max-width: 400px;                               /* 最大幅を400pxに制限 */
+}
+
+/* リンクのデザイン */
+.container ul li {
+    background-color: #ffffff;                     /* 背景を白に */
+    border-radius: 8px;                            /* 角を丸く */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);     /* 影をつけて浮かせる */
+    transition: all 0.3s ease;                     /* アニメーション効果 */
+}
+
+.container ul li a {
+    display: block;                                /* ブロック要素化（クリック範囲を広げる） */
+    padding: 4px;                                 /* 内側の余白を小さく */
+    color: #333;                                  /* 文字色 */
+    text-decoration: none;                        /* 下線を消す */
+    font-size: 16px;                              /* 文字サイズ */
+    font-weight: 600;                             /* 文字を太めに */
+    transition: background-color 0.3s, transform 0.3s; /* ホバー時の変化を滑らかに */
+}
+
+/* リンクホバー時 */
+.container ul li:hover {
+    transform: translateY(-5px); /* ホバー時に少し上に浮かせる */
+}
+
+.container ul li a:hover {
+    background-color: #2a9d8f; /* ホバー時の背景色を変更 */
+    color: white;              /* 文字色を白に */
+}
+
+iframe {
+    width: 100%;          /* リンクの幅に合わせる */
+    max-width: 390px;     /* 最大幅を制限 */
+    height: 0;            /* 初期状態で非表示 */
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    margin-top: 10px;     /* リンクとの間隔 */
+    transition: height 0.3s ease; /* なめらかに表示 */
+    display: none; /* 初期状態では非表示 */
+}
+
+iframe[src] {
+    height: 500px; /* リンクが押されたら表示 */
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.hamburger .line {
+    width: 30px;
+    height: 5px;
+    background-color: #eec4c4; /* メニューの色を白に変更 */
+    border-radius: 5px;
+}
+
+/* オーバーレイ（背景の暗転） */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+}
+
+/* メニューのスライドアニメーション */
+nav ul {
+    list-style: none;
+    padding: 60px 0 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 140px;
+    height: 100%;
+    background-color: #268089e7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    
+}
+
+nav ul.visible {
+    right: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    color: white !important; /* 文字色を強制的に白に */
+    background-color: transparent !important; /* 余計な背景色を消す */
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* =========================== */
+/*       全体のデザイン       */
+/* =========================== */
+body {
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif; /* おしゃれなフォントを適用 */
+    background-color: #f4f4f4; /* 背景色を明るめのグレーに */
+    color: #333; /* 文字色をダークグレーに */
+    margin: 0;
+    padding: 0;
+}
+
+h1.title {
+    text-align: center;
+    font-size: 28px;
+    color: #222;
+    padding: 100px 20px 20px; /* ナビゲーションバーとの被りを回避 */
+    margin-top: 0;
+}
+
+/* =========================== */
+/*       ナビゲーションバー       */
+/* =========================== */
+nav {
+    background-color: #268089e7;
+    padding: 30px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}

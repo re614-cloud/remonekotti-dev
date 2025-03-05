@@ -1,0 +1,169 @@
+/* =========================== */
+/*       全体のデザイン       */
+/* =========================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* =========================== */
+/*       ナビゲーションバー       */
+/* =========================== */
+nav {
+    background-color: #268089e7;
+    padding: 30px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding: 70px 20px 20px; /* ナビゲーションバーとの被りを回避 */
+}
+
+section {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================== */
+/*       ハンバーガーメニュー       */
+/* =========================== */
+.hamburger {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+.hamburger .line {
+    width: 30px;
+    height: 5px;
+    background-color: #eec4c4;
+    border-radius: 5px;
+}
+
+/* =========================== */
+/*       メニューのスライドアニメーション       */
+/* =========================== */
+nav ul {
+    list-style: none;
+    padding: 60px 0 0; /* 余白を減らしてコンパクトに */
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 140px;
+    height: 100%;
+    background-color: #268089e7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul.visible {
+    right: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* =========================== */
+/*       入力フォームの調整       */
+/* =========================== */
+form {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+input[type="text"], textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #268089;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #1f6b75;
+}
+
+/* =========================== */
+/*       送信完了メッセージの調整       */
+/* =========================== */
+#responseMessage {
+    display: none;
+    color: rgb(2, 2, 2);
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
