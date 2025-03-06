@@ -44,5 +44,5 @@ app.post("/submit", (req, res) => {
 
 // 🔹 サーバー起動
 app.listen(3000, "0.0.0.0", () => {
-    console.log("Server running on http://192.168.128.137:3000");
+    console.log("Server running on http://172.20.10.4:3000");
 });
